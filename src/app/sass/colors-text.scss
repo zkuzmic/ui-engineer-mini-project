@@ -1,0 +1,12 @@
+@import 'color-primitives';
+
+$colors-text: (
+  default: $gray-300,
+  inverse: $white,
+  inverse-weak: $gray-700,
+  primary: $purple-400,
+);
+
+@function colors-text($key) {
+  @return map-get($colors-text, $key)
+}

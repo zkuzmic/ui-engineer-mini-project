@@ -1,0 +1,23 @@
+@mixin pagination($block-name) {
+  .#{$block-name}__pagination {
+    display: flex;
+    justify-content: center;
+
+    span {
+      color: colors-text('inverse');
+      display: inline-flex;
+      font-size: font-size(200);
+      margin-left: minorScale(1);
+      margin-right: minorScale(1);
+
+      &:hover {
+        cursor: pointer;
+        text-decoration: underline;
+      }
+
+      &.active {
+        color: colors-text('primary');
+      }
+    }
+  }
+}

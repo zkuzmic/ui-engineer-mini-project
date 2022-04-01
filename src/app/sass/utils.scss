@@ -1,0 +1,7 @@
+@function minorScale($num) {
+  @return $num * 4px
+};
+
+@function majorScale($num) {
+  @return $num * 8px
+}

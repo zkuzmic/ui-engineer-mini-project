@@ -1,0 +1,43 @@
+@import 'sass';
+
+.app {
+  &__header {
+    background-color: colors-background('light');
+    background-image: url('../assets/images/hero.svg');
+    background-position: center bottom;
+    background-repeat: no-repeat;
+    color: colors-text('default');
+    display: block;
+    font-size: font-size(700);
+    margin: 0;
+    padding-bottom: majorScale(10);
+    padding-top: majorScale(14);
+    text-align: center;
+  }
+
+  &__nav {
+    display: flex;
+    justify-content: center;
+    margin-left: majorScale(2);
+    margin-right: majorScale(2);
+    padding-bottom: majorScale(7);
+    padding-top: majorScale(7);
+  }
+
+  &__nav-link {
+    color: colors-text('inverse-weak');
+    font-size: font-size(500);
+    text-decoration: none;
+    margin-left: minorScale(6);
+    margin-right: minorScale(6);
+
+    &:hover {
+      text-decoration: underline;
+    }
+
+    &--active {
+      color: colors-text('inverse');
+      font-weight: 500;
+    }
+  }
+} 

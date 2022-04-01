@@ -1,19 +1,33 @@
-<input name="name-search" placeholder="Search By Name" type="text" autocomplete="off" [(ngModel)]="searchTerm" />
+<div class="characters__wrapper">
 
-<span (click)="getCharacters(1)">Search</span>
+  <!-- Putting search field inside a form for usability + accessibility -->
+  <form role="search" (ngSubmit)="getCharacters(1)" class="characters__search-form">
+    <input 
+      name="name-search"
+      type="search"
+      placeholder="Search By Name"
+      autocomplete="off" 
+      [(ngModel)]="searchTerm"
+      aria-label="Search for Rick and Morty characters by name"
+    >
+    <button>Search</button>
+  </form>
 
-<table *ngIf="characterCall">
+  <table *ngIf="characterCall" class="characters__table">
     <tbody *ngIf="characterCall.results">
-        <tr *ngFor="let c of characterCall.results" [routerLink]="['/character', c.id]" [queryParams]="{ fromPage : currentPage, nameSearch : searchTerm }">
-            <td>{{c.name}}</td>
-            <td>{{c.species}}</td>
-            <td>{{c.status}}</td>
-            <td>{{c.gender}}</td>
-        </tr>
+      <tr *ngFor="let c of characterCall.results" [routerLink]="['/character', c.id]" [queryParams]="{ fromPage : currentPage, nameSearch : searchTerm }">
+        <td>{{c.name}}</td>
+        <td>{{c.species}}</td>
+        <td>{{c.status}}</td>
+        <td>{{c.gender}}</td>
+      </tr>
     </tbody>
-</table>
+  </table>
 
 
-<ng-container *ngIf="pages">
-    <span *ngFor="let p of pages" [ngClass]="{'active': (p === currentPage)}" (click)="getCharacters(p)">{{p}}</span>
-</ng-container>
+  <ng-container *ngIf="pages">
+    <div class="characters__pagination">
+      <span *ngFor="let p of pages" [ngClass]="{'active': (p === currentPage)}" (click)="getCharacters(p)">{{p}}</span>
+    </div>
+  </ng-container>
+</div>

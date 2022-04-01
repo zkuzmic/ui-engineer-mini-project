@@ -1,1 +1,40 @@
-div.individual div.card { margin: 0px auto; width: 300px; }
+@import '../sass';
+
+$gutter: majorScale(2);
+
+.individual {
+  margin: 0 auto;
+  max-width: 615px + ($gutter * 2);
+  padding-bottom: $gutter * 2;
+  padding-left: $gutter;
+  padding-right: $gutter;
+
+  &__wrapper {
+    align-items: center;
+    background: colors-background('dark-weak');
+    border: 1px solid colors-border('default');
+    border-radius: 10px;
+    display: flex;
+    flex-direction: column;
+    padding-bottom: majorScale(4);
+    padding-top: majorScale(4);
+
+    img {
+      border-radius: 100px;
+      flex-grow: 0;
+      margin-bottom: majorScale(6);
+    }
+  }
+
+  &__name {
+    font-size: font-size(600);
+    font-weight: 500;
+    margin-bottom: majorScale(6);
+    text-align: center;
+  }
+
+  &__info {
+    font-size: font-size(400);
+    word-spacing: minorScale(4);
+  }
+}

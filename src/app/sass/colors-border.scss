@@ -1,0 +1,9 @@
+@import 'color-primitives';
+
+$colors-border: (
+  default: $gray-500,
+);
+
+@function colors-border($key) {
+  @return map-get($colors-border, $key)
+}

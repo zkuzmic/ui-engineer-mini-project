@@ -1,0 +1,41 @@
+@import '../sass';
+
+$gutter: majorScale(2);
+$input-radius: 6px;
+
+.characters {
+  &__search-form {
+    display: flex;
+    margin-bottom: majorScale(5);
+
+    input {
+      border: none;
+      border-radius: $input-radius;
+      flex-grow: 1;
+      padding-left: minorScale(4);
+      padding-right: minorScale(4);
+    }
+
+    button {
+      background-color: colors-background('primary');
+      border: none;
+      border-radius: $input-radius;
+      color: colors-text('inverse');
+      font-size: font-size(400);
+      margin-left: majorScale(3);
+      padding-bottom: minorScale(3);
+      padding-left: minorScale(19);
+      padding-right: minorScale(19);
+      padding-top: minorScale(3);
+
+      &:hover {
+        background-color: colors-background('primary-dark');
+        cursor: pointer;
+      }
+    }
+  }
+}
+
+@include table-wrapper('characters');
+@include table('characters', true);
+@include pagination('characters');

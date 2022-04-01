@@ -1,0 +1,5 @@
+@import '../sass';
+
+@include table-wrapper('episodes');
+@include table('episodes');
+@include pagination('episodes');

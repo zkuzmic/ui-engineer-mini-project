@@ -1,0 +1,14 @@
+@import 'color-primitives';
+
+$colors-background: (
+  light: $white,
+  dark: $gray-200,
+  dark-weak: $gray-400,
+  dark-weaker: $gray-500,
+  primary: $purple-400,
+  primary-dark: $purple-200,
+);
+
+@function colors-background($key) {
+  @return map-get($colors-background, $key)
+}
